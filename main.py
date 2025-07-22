@@ -16,3 +16,6 @@ with col2:
               grow both academically and creatively.
               """
     st.info(content)
+
+content2 = "Below you can find some of the projects I have worked on. Feel free to contact me!"
+st.write(content2)
