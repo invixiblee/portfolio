@@ -1,26 +1,19 @@
 
+import os
+from dotenv import load_dotenv
 import smtplib, ssl
+load_dotenv()
 
-host = "smtp.gmail.com"
-port = 465
+def semail(message):
+    host = "smtp.gmail.com"
+    port = 465
 
-username = "tazirxxx@gmail.com"
-password = "kcoz erbb ptwi tpmw"
+    username = os.getenv("EMAIL_ADDRESS")
+    password = os.getenv("EMAIL_PASSWORD")
 
-receiver = "tazirxxx@gmail.com"
-context = ssl.create_default_context()
+    receiver = os.getenv("EMAIL_ADDRESS")
+    context = ssl.create_default_context()
 
-message = """\
-Subject: Testing Out a 'send_email' Script!
-Hi!
-How are you?
-
-Sincerely,
-Test
-"""
-
-
-
-with smtplib.SMTP_SSL(host, port, context=context) as server:
-    server.login(username, password)
-    server.sendmail(username, receiver, message)
+    with smtplib.SMTP_SSL(host, port, context=context) as server:
+        server.login(username, password)
+        server.sendmail(username, receiver, message)
