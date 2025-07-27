@@ -9,7 +9,7 @@ with col1:
     st.image('images/mee2.jpg')
 
 with col2:
-    st.title('Muntazir')
+    st.title('Muntazir:smiley:')
     content = """
               Hey, I'm Muntazir — a passionate programmer, a dedicated high school student, 
               and, of course, a teenager who's always curious and eager to learn new things. 
